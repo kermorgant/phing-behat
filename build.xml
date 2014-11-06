@@ -16,7 +16,7 @@
 
     <property name="behat.bin"            value="${project.basedir}/bin/behat" />
     <property name="behat.tags"           value="" />
-    <property name="behat.logs.dir"       value="${project.basedir}/build/logs/behat" />
+    <property name="behat.logs.dir"       value="${project.basedir}/build/behat" />
     <property name="behat.htmlReport"     value="${behat.logs.dir}/behat.html" />
     <property name="behat.init.overwrite" value="true" />
 

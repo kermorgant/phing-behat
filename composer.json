@@ -1,0 +1,21 @@
+{
+  "name": "previousnext/phing-behat",
+  "type": "library",
+  "description": "A library Behat targets for Phing.",
+  "homepage": "https://github.com/previousnext/phing-behat",
+  "support": {
+    "issues": "https://github.com/previousnext/phing-behat",
+    "source": "https://github.com/previousnext/phing-behat"
+  },
+  "keywords": [
+    "phing"
+  ],
+  "license": "GPL-2.0+",
+  "require": {
+    "drupal/drupal-extension": "v1.0.2"
+  },
+  "minimum-stability": "dev",
+  "config": {
+    "bin-dir": "bin/"
+  }
+}

@@ -3,7 +3,7 @@
   description: A library Behat targets for Phing.
 -->
 
-<project name="behat" default="prepare" phingVersion="2.4.11">
+<project name="behat" default="behat" phingVersion="2.4.11">
 
     <!--               -->
     <!--  Properties   -->
@@ -11,8 +11,8 @@
 
     <!-- Application configuration -->
     <property name="app.uri"              value="" />
-    <property name="app.port"             value="" />
-    <property name="app.dir"              value="" />
+    <property name="app.port"             value="80" />
+    <property name="app.dir"              value="${project.basedir}" />
 
     <property name="behat.bin"            value="${project.basedir}/bin/behat" />
     <property name="behat.tags"           value="" />
@@ -24,7 +24,7 @@
     <!--  Targets   -->
     <!-- ========== -->
 
-    <target name="prepare"
+    <target name="behat:init"
             description="Setup steps for Behat build tasks.">
         <!-- Check we have the application configuration -->
         <fail unless="app.uri" message="Please provide an app.uri property." />
@@ -45,7 +45,7 @@
     </target>
 
     <target name="behat"
-            depends="prepare"
+            depends="behat:init"
             description="Run Behat tests and print human readable output. Intended for usage on the command line before committing.">
         <if><equals arg1="${behat.tags}" arg2="" />
             <then>
@@ -64,7 +64,7 @@
     </target>
 
     <target name="ci:behat"
-            depends="prepare"
+            depends="behat:init"
             description="Run Behat tests creating a log file for the continuous integration server.">
         <if><equals arg1="${behat.tags}" arg2="" />
             <then>

@@ -12,7 +12,7 @@
   ],
   "license": "GPL-2.0+",
   "require": {
-    "drupal/drupal-extension": "v1.0.2"
+    "drupal/drupal-extension": "~1.0"
   },
   "minimum-stability": "dev",
   "config": {

@@ -47,6 +47,8 @@
     <target name="behat"
             depends="behat:init"
             description="Run Behat tests and print human readable output. Intended for usage on the command line before committing.">
+	<!-- Prime the site prior to running the test suite -->  
+	<exec command="curl ${app.uri} 2&gt;&amp;1 /dev/null" />
         <if><equals arg1="${behat.tags}" arg2="" />
             <then>
                 <exec command="${behat.bin} --ansi"
